@@ -52,7 +52,7 @@ public:
     }
 
     //peek/tap operation retreive the value of the topmost element without removing it
-    int peek()
+    void peek()
     {
         if(isempty())
         {
@@ -68,7 +68,7 @@ public:
                 current = current->next;
             }
             cout << endl;
-        }//return value of the top node
+        } //return value of the top node
     }
 };
 
