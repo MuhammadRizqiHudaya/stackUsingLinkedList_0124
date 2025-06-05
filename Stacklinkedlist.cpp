@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-class node 
+class Node 
 {
 public:
     int data;
-    node* next;
+    Node* next;
 
     node()
     {
@@ -16,7 +16,16 @@ public:
 class stack
 {
 private:
-    node *top;// pointer to the top of the stack
+    Node *top;// pointer to the top of the stack
 
+public:
+    stack()
+    {
+        top = NULL;//initiatelize the stack with a null top pointer
+    }
 
-}
+    int push(int value)
+    {
+        Node* newNode
+    }
+};
