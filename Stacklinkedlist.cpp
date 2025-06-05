@@ -72,8 +72,8 @@ public:
     }
 };
 
-    int main()
-    {
+int main()
+{
         stack stack;
 
         int choice = 0;
@@ -112,4 +112,4 @@ public:
             cout << endl;
         }
         return 0;
-    }
+}
