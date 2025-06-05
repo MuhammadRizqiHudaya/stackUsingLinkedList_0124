@@ -7,7 +7,7 @@ public:
     int data;
     Node* next;
 
-    node()
+    Node()
     {
         next = NULL;
     }
@@ -26,6 +26,11 @@ public:
 
     int push(int value)
     {
-        Node* newNode
+        Node* newNode = new Node();
+        newNode->data = value;
+        newNode->next = top;
+        top = newNode;
+        cout << "push value " << value << endl;
+        return value;
     }
 };
