@@ -33,4 +33,5 @@ public:
         cout << "push value " << value << endl;
         return value;
     }
+    //isempty operation : check if step is empty
 };
