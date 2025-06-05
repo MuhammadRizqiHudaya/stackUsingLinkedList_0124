@@ -101,6 +101,9 @@ public:
             case 3 :
                 stack.peek();
                 break;
+            case 4:
+                cout << "exiting program" << endl;
+                break;
 
             }
 
