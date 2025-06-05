@@ -26,10 +26,10 @@ public:
 
     int push(int value)
     {
-        Node* newNode = new Node();
-        newNode->data = value;
-        newNode->next = top;
-        top = newNode;
+        Node* newNode = new Node(); //1.allocate memory for new node
+        newNode->data = value;  //2.assign value to the new node
+        newNode->next = top;    //3.set the next pointer of the new node to the current top
+        top = newNode;          //4.update the top pointer to point to the new node
         cout << "push value " << value << endl;
         return value;
     }
