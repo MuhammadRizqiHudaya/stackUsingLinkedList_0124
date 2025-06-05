@@ -104,7 +104,9 @@ public:
             case 4:
                 cout << "exiting program" << endl;
                 break;
-
+            default:
+                cout << "invalid choice,try again"<< endl;
+                break;
             }
 
             cout << endl;
