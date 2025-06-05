@@ -98,6 +98,9 @@ public:
             case 2:
                 stack.pop();// pop the topmost element from the stack
                 break;
+            case 3 :
+                stack.peek();
+                break;
 
             }
 
