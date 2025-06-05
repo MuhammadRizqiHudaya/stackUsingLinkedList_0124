@@ -70,6 +70,7 @@ public:
             cout << endl;
         }//return value of the top node
     }
+};
 
     int main()
     {
@@ -92,8 +93,12 @@ public:
             case 1:
                 cout << "enter the value to push:";
                 cin >> value;
-                stack.push(value);
+                stack.push(value);//push the entered value into the stack
+                break;
+
             }
+
+            cout << endl;
         }
+        return 0;
     }
-};
