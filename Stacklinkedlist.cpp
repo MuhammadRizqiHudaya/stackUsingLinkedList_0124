@@ -42,13 +42,15 @@ public:
     //pop operation ; remove the topmost element ftom the stack
     void pop()
     {
-        if (isempty())
+        Node* temp = top;
+        if (isempty()) 
         {
             cout << "stack is empty" << endl;
-            return; // if the stack is empty print a message and return
-        }   
-        cout << "popped value:" << top->data << endl;
-        top = top->next;
+            return;
+        }
+        cout << "popped value:" << temp->data << endl;
+        top = temp->next;
+        temp= nullptr;
     }
 
     //peek/tap operation retreive the value of the topmost element without removing it
