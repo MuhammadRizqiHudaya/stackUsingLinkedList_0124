@@ -12,3 +12,11 @@ public:
         next = NULL;
     }
 };
+
+class stack
+{
+private:
+    node *top;// pointer to the top of the stack
+
+
+}
