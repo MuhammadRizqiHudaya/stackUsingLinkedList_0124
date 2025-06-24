@@ -1,0 +1,114 @@
+#include <iostream>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node* next;
+};
+
+class CircularQueue {
+private:
+    Node* FRONT;
+    Node* REAR;
+
+public:
+    CircularQueue() {
+        FRONT = nullptr;
+        REAR = nullptr;
+    }
+
+    void insert() {
+        int num;
+        cout << "Enter a number: ";
+        cin >> num;
+
+        Node* newNode = new Node();
+        newNode->data = num;
+
+        if (FRONT == nullptr) {
+            // Queue kosong, node pertama
+            FRONT = newNode;
+            REAR = newNode;
+            newNode->next = FRONT; // circular
+        } else {
+            REAR->next = newNode;
+            REAR = newNode;
+            REAR->next = FRONT; // maintain circular link
+        }
+    }
+
+    void remove() {
+        if (FRONT == nullptr) {
+            cout << "\nQueue underflow\n";
+            return;
+        }
+
+        if (FRONT == REAR) {
+            // Hanya satu elemen
+            cout << "\nThe element deleted from the queue is: " << FRONT->data << "\n";
+            delete FRONT;
+            FRONT = nullptr;
+            REAR = nullptr;
+        } else {
+            // Lebih dari satu elemen
+            Node* temp = FRONT;
+            cout << "\nThe element deleted from the queue is: " << temp->data << "\n";
+            FRONT = FRONT->next;
+            REAR->next = FRONT; // maintain circular link
+            delete temp;
+        }
+    }
+
+    void display() {
+        if (FRONT == nullptr) {
+            cout << "Queue is empty\n";
+            return;
+        }
+
+        cout << "\nElements in the queue are:\n";
+        Node* temp = FRONT;
+        do {
+            cout << temp->data << " ";
+            temp = temp->next;
+        } while (temp != FRONT);
+        cout << endl;
+    }
+};
+
+int main() {
+    CircularQueue q;
+    char ch;
+
+    while (true) {
+        try {
+            cout << "\nMenu\n";
+            cout << "1. Insert element\n";
+            cout << "2. Delete element\n";
+            cout << "3. Display queue\n";
+            cout << "4. Exit\n";
+            cout << "Enter your choice (1-4): ";
+            cin >> ch;
+
+            switch (ch) {
+            case '1':
+                q.insert();
+                break;
+            case '2':
+                q.remove();
+                break;
+            case '3':
+                q.display();
+                break;
+            case '4':
+                return 0;
+            default:
+                cout << "Invalid option!!" << endl;
+                break;
+            }
+        }
+        catch (exception& e) {
+            cout << "Check for the values entered." << endl;
+        }
+    }
+}
